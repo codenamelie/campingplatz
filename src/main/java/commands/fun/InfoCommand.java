@@ -3,7 +3,7 @@ package commands.fun;
 import handler.CustomDateFormatter;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import utils.Embed;
+import objects.Embed;
 import net.dv8tion.jda.api.entities.Member;
 
 import java.util.ArrayList;

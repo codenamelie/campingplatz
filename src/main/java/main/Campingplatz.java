@@ -1,6 +1,7 @@
 package main;
 
 import cache.Cache;
+import commands.admin.SetupCommand;
 import commands.fun.*;
 import commands.moderation.BanCommand;
 import events.MessageEvent;
@@ -57,6 +58,7 @@ public class Campingplatz {
                 .addEventListeners(new InfoCommand())
                 .addEventListeners(new BannerCommand())
                 .addEventListeners(new CardCommand())
+                .addEventListeners(new SetupCommand())
                 .build();
         selfUser = jda.getSelfUser();
     }

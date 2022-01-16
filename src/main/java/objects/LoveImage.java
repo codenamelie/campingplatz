@@ -1,4 +1,4 @@
-package utils;
+package objects;
 
 import net.dv8tion.jda.api.entities.User;
 import sun.misc.Launcher;

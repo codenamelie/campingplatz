@@ -1,4 +1,4 @@
-package utils;
+package objects;
 
 import main.Campingplatz;
 import net.dv8tion.jda.api.EmbedBuilder;

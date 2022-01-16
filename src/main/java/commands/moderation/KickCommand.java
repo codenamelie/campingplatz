@@ -3,7 +3,7 @@ package commands.moderation;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.interaction.SlashCommandEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import utils.Embed;
+import objects.Embed;
 
 public class KickCommand extends ListenerAdapter {
 

@@ -3,8 +3,8 @@ package commands.fun;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import utils.Embed;
-import utils.LoveImage;
+import objects.Embed;
+import objects.LoveImage;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;

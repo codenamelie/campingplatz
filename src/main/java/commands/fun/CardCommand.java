@@ -3,7 +3,7 @@ package commands.fun;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.entities.Member;
-import utils.CardImage;
+import objects.CardImage;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
