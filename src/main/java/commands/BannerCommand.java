@@ -9,7 +9,7 @@ public class BannerCommand extends ListenerAdapter {
 
     @Override
     public void onSlashCommand(SlashCommandEvent event) {
-        if(event.getName().equalsIgnoreCase("banner")) {
+        if(event.getName().equalsIgnoreCase("banner"))  {
             event.deferReply().complete().deleteOriginal().queue();
             Member member;
             Embed embed = new Embed();
