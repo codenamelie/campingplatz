@@ -21,8 +21,14 @@ public class ReadyEvent extends ListenerAdapter {
                 .addOption(OptionType.USER, "user", "User", true)
                 .addOption(OptionType.STRING, "reason", "Grund", false);
 
+        final CommandData ban = new CommandData("ban", "Ban")
+                .addOption(OptionType.USER, "user", "User", true)
+                .addOption(OptionType.STRING, "reason", "Grund", false);
+
+
         g.upsertCommand(avatar).queue();
         g.upsertCommand(banner).queue();
         g.upsertCommand(kick).queue();
+        g.upsertCommand(ban).queue();
     }
 }
