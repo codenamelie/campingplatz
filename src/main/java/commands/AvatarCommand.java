@@ -9,7 +9,7 @@ public class AvatarCommand extends ListenerAdapter {
 
     @Override
     public void onSlashCommand(SlashCommandEvent event) {
-        if(event.getName().equalsIgnoreCase("avatar")) {
+        if(event.getName().equalsIgnoreCase("avatare")) {
             event.deferReply().complete().deleteOriginal().queue();
             Member member;
             Embed embed = new Embed();
