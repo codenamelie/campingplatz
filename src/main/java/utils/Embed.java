@@ -9,11 +9,10 @@ import java.util.Date;
 
 public class Embed {
 
-    private static SelfUser user = Campingplatz.getSelfUser();
-    private EmbedBuilder embedBuilder = new EmbedBuilder().setAuthor(user.getName(), null, user.getAvatarUrl()).setFooter(user.getName()).setTimestamp(new Date().toInstant());
+    private static final SelfUser user = Campingplatz.getSelfUser();
+    private final EmbedBuilder embedBuilder = new EmbedBuilder().setAuthor(user.getName(), null, user.getAvatarUrl()).setFooter(user.getName()).setTimestamp(new Date().toInstant());
 
     public Embed() {
-
     }
 
     public EmbedBuilder getEmbedBuilder() {

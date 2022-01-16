@@ -1,4 +1,4 @@
-package commands;
+package utils;
 
 import net.dv8tion.jda.api.entities.User;
 import sun.misc.Launcher;
@@ -14,13 +14,13 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Objects;
 
-public class CImage {
+public class LoveImage {
 
     private BufferedImage img;
 
-    public CImage(int love, User sender, User target) {
+    public LoveImage(int love, User sender, User target) {
         try {
-            img = ImageIO.read(new File("assets/background.png"));
+            img = ImageIO.read(new File("assets/love.png"));
             Graphics2D g = img.createGraphics();
 
             Font font = new Font("Arial", Font.PLAIN, 80);
@@ -35,22 +35,15 @@ public class CImage {
                     RenderingHints.VALUE_TEXT_ANTIALIAS_ON);
             g.drawString(text, 960 / 2 - (int) textWidth / 2,
                     320 / 2 + (int) textHeight / 2);
-            String imgFormat = "png";
-
             g.drawImage(circle(getUserAvatar(sender)), 10, 10, null);
             g.drawImage(circle(getUserAvatar(target)), 650, 10, null);
-            try {
-                ImageIO.write(img, imgFormat, new File("new_image." + imgFormat));
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     private BufferedImage getUserAvatar(User user) throws IOException {
-        URLConnection connection = new URL(user.getAvatarUrl()+"?size=300" != null ? user.getAvatarUrl()+"?size=300" : user.getDefaultAvatarUrl()+"?size=300").openConnection();
+        URLConnection connection = new URL(user.getAvatarUrl() + "?size=300" != null ? user.getAvatarUrl() + "?size=300" : user.getDefaultAvatarUrl() + "?size=300").openConnection();
         connection.setRequestProperty("User-Agent", "bot emily-bot");
         BufferedImage profileImg;
         try {
