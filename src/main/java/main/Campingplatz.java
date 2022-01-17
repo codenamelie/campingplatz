@@ -4,7 +4,6 @@ import cache.Cache;
 import commands.admin.SetupCommand;
 import commands.fun.*;
 import commands.moderation.BanCommand;
-import events.MessageEvent;
 import events.ReadyEvent;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -19,12 +18,13 @@ import javax.security.auth.login.LoginException;
 
 public class Campingplatz {
 
-    private static final String token = "";
+    private static final String token = "OTMyMDYxNTEwNTg5NjQwNzQ1.YeNf7A.8RNQ559H2aXfGM60r_4KqJiRKQc";
     private static SelfUser selfUser;
     private static JDA jda;
     private static Cache cache;
 
     public static void main(String[] args) throws LoginException {
+        //new NewLoveImage(100, "https://cdn.discordapp.com/avatars/703751413305573438/c49e5b4298afdee58b0761e5758698df.png");
         bot();
     }
 
@@ -49,15 +49,14 @@ public class Campingplatz {
                 .setAutoReconnect(true)
                 .addEventListeners(new ReadyEvent())
                 .addEventListeners(new ShipCommand())
-                .addEventListeners(new MessageEvent())
                 .addEventListeners(new BanCommand())
                 .addEventListeners(new AvatarCommand())
                 .addEventListeners(new SlapCommand())
-                .addEventListeners(new UserBanEvent())
                 .addEventListeners(new InfoCommand())
                 .addEventListeners(new BannerCommand())
                 .addEventListeners(new CardCommand())
                 .addEventListeners(new SetupCommand())
+                .addEventListeners(new EmojiquizEvent())
                 .build();
         selfUser = jda.getSelfUser();
     }

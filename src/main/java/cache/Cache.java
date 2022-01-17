@@ -1,35 +1,18 @@
 package cache;
 
 import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.VoiceChannel;
-
-import java.util.stream.Collectors;
+import net.dv8tion.jda.api.entities.TextChannel;
 
 public class Cache {
 
-    private VoiceChannel members;
-    private VoiceChannel bots;
-    private VoiceChannel messageCountChannel;
-    private int messageCount = 0;
+    private TextChannel emojiquiz;
 
     public Cache(Guild guild) {
-        members = guild.getVoiceChannelById("932341919948865536");
-        bots = guild.getVoiceChannelById("932342358132002876");
-        messageCountChannel = guild.getVoiceChannelById("932344151213760623");
-        members.getManager().setName("• Mitglieder: " + guild.getMembers().size() + "/" + guild.getMaxMembers()).queue();
-        bots.getManager().setName("• Bots: " + guild.getMembers().stream().filter(x->x.getUser().isBot()).collect(Collectors.toList()).size()).queue();
-        messageCountChannel.getManager().setName("• Nachrichten: " + messageCount).queue();
+        emojiquiz = guild.getTextChannelById("932387814711111710");
     }
 
-    public void addMessageCount() {
-        messageCount++;
+    public TextChannel getEmojiquiz() {
+        return emojiquiz;
     }
 
-    public int getMessageCount() {
-        return messageCount;
-    }
-
-    public VoiceChannel getMessageCountChannel() {
-        return messageCountChannel;
-    }
 }

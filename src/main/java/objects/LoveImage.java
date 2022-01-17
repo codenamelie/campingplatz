@@ -17,12 +17,15 @@ import java.util.Objects;
 public class LoveImage {
 
     private BufferedImage img;
+    private File file;
+    private String message;
 
     public LoveImage(int love, User sender, User target) {
+
         try {
             img = ImageIO.read(new File("assets/love.png"));
             Graphics2D g = img.createGraphics();
-
+            this.message = LoveImageMessageHandler.get(love);
             Font font = new Font("Arial", Font.PLAIN, 80);
             g.setFont(font);
             g.setPaint(Color.decode("0xff9cf7"));
@@ -37,9 +40,23 @@ public class LoveImage {
                     320 / 2 + (int) textHeight / 2);
             g.drawImage(circle(getUserAvatar(sender)), 10, 10, null);
             g.drawImage(circle(getUserAvatar(target)), 650, 10, null);
+            file = new File("saved.png");
+            ImageIO.write(img, "png", file);
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public File getFile() {
+        return file;
+    }
+
+    public void delete() {
+        file.delete();
     }
 
     private BufferedImage getUserAvatar(User user) throws IOException {

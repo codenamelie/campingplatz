@@ -18,13 +18,13 @@ public class BannerCommand extends ListenerAdapter {
             } catch (IndexOutOfBoundsException e) {
                 member = event.getMember();
             }
-            String url = member.getUser().retrieveProfile().complete().getBannerUrl();
-            if (url == "null") {
-                embed.getEmbedBuilder().setImage(member.getUser().retrieveProfile().complete().getBannerUrl());
-            } else {
+            try {
+                embed.getEmbedBuilder().setDescription(CustomNameFormatter.getName(member.getUser())+ "'s Banner");
+                embed.getEmbedBuilder().setThumbnail(member.getEffectiveAvatarUrl());
+                embed.getEmbedBuilder().setImage(member.getUser().retrieveProfile().complete().getBannerUrl() + "?size=512");
+            } catch(IllegalArgumentException e){
                 embed.getEmbedBuilder().setDescription(member.getAsMention() + " hat keinen Banner :(");
             }
-            embed.getEmbedBuilder().setDescription(CustomNameFormatter.getName(member.getUser())+ "'s Banner");
             embed.sendIn(event.getTextChannel());
         }
     }
