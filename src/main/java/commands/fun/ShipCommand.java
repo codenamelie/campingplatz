@@ -17,7 +17,7 @@ public class ShipCommand extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        if (event.getMessage().getContentDisplay().startsWith(".ship")) {
+        if (event.getMessage().getContentDisplay().startsWith(".ship ")) {
             try {
                 Member t = event.getMessage().getMentionedMembers().get(0);
                 int love = new Random().nextInt(100);

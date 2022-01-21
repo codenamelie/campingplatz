@@ -1,12 +1,12 @@
 package objects;
 
-import net.dv8tion.jda.api.entities.Emoji;
-import net.dv8tion.jda.api.entities.Message;
+import enums.EmojiQuizDifficulty;
+import handler.EmojiquizHandler;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmojiQuiz {
+public class Emojiquiz {
 
     private String answer;
     private List<String> emojis = new ArrayList<>();
@@ -15,7 +15,7 @@ public class EmojiQuiz {
     private EmojiQuizDifficulty difficulty;
     private int points;
 
-    public EmojiQuiz(String answer, String... entries) {
+    public Emojiquiz(String answer, String... entries) {
         this.answer = answer;
         for (String emoji : entries) {
             emojis.add(emoji);

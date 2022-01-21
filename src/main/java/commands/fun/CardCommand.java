@@ -32,5 +32,4 @@ public class CardCommand extends ListenerAdapter {
         byte[] bytes = baos.toByteArray();
         return bytes;
     }
-
 }

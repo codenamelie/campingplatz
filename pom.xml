@@ -13,14 +13,32 @@
         <maven.compiler.target>8</maven.compiler.target>
     </properties>
 
-
-
     <dependencies>
+        <!-- https://mvnrepository.com/artifact/com.google.apis/google-api-services-youtube -->
+        <dependency>
+            <groupId>com.google.apis</groupId>
+            <artifactId>google-api-services-youtube</artifactId>
+            <version>v3-rev222-1.25.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.markozajc</groupId>
+            <artifactId>akiwrapper</artifactId>
+            <version>1.5.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.instagram4j</groupId>
+            <artifactId>instagram4j</artifactId>
+            <version>2.0.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.ws</groupId>
+            <artifactId>jaxws-rt</artifactId>
+            <version>2.1.4</version>
+        </dependency>
         <dependency>
             <groupId>net.dv8tion</groupId>
             <artifactId>JDA</artifactId>
             <version>5.0.0-alpha.2</version>
         </dependency>
     </dependencies>
-
 </project>

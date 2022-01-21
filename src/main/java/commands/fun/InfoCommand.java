@@ -13,7 +13,7 @@ public class InfoCommand extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event){
-        if (event.getMessage().getContentDisplay().startsWith(".i")) {
+        if (event.getMessage().getContentDisplay().startsWith(".i ")) {
             Embed embed = new Embed();
             Member member;
             try {

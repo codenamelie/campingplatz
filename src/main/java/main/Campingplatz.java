@@ -1,6 +1,8 @@
 package main;
 
 import cache.Cache;
+import com.google.api.services.youtube.YouTube;
+import com.google.api.services.youtube.YouTubeRequest;
 import commands.admin.SetupCommand;
 import commands.fun.*;
 import commands.moderation.BanCommand;
@@ -15,10 +17,11 @@ import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
 
 import javax.security.auth.login.LoginException;
+import java.util.Map;
 
 public class Campingplatz {
 
-    private static final String token = "OTMyMDYxNTEwNTg5NjQwNzQ1.YeNf7A.8RNQ559H2aXfGM60r_4KqJiRKQc";
+    private static final String token = "OTMyMDYxNTEwNTg5NjQwNzQ1.YeNf7A.UTcAzvkx811OLBWxyGR3Vr5QcbU";
     private static SelfUser selfUser;
     private static JDA jda;
     private static Cache cache;
@@ -26,6 +29,9 @@ public class Campingplatz {
     public static void main(String[] args) throws LoginException {
         //new NewLoveImage(100, "https://cdn.discordapp.com/avatars/703751413305573438/c49e5b4298afdee58b0761e5758698df.png");
         bot();
+
+        
+
     }
 
     public static void setCache(Cache c) {
@@ -48,6 +54,8 @@ public class Campingplatz {
                 .setStatus(OnlineStatus.IDLE)
                 .setAutoReconnect(true)
                 .addEventListeners(new ReadyEvent())
+                .addEventListeners(new AkiCommand())
+                //.addEventListeners(new pfpCommand())
                 .addEventListeners(new ShipCommand())
                 .addEventListeners(new BanCommand())
                 .addEventListeners(new AvatarCommand())

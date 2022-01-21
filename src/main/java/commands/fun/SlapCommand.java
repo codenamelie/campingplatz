@@ -11,7 +11,7 @@ public class SlapCommand extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        if (event.getMessage().getContentDisplay().startsWith(".slap")) {
+        if (event.getMessage().getContentDisplay().startsWith(".slap ")) {
             Embed embed = new Embed();
             try {
                 Member member = event.getMessage().getMentionedMembers().get(0);

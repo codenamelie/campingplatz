@@ -1,7 +1,6 @@
 package objects;
 
-import net.dv8tion.jda.api.entities.User;
-import sun.misc.Launcher;
+import handler.LoveImageMessageHandler;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -67,7 +66,7 @@ public class NewLoveImage {
         try {
             profileImg = ImageIO.read(connection.getInputStream());
         } catch (Exception ignored) {
-            profileImg = ImageIO.read(Objects.requireNonNull(Launcher.class.getClassLoader().getResource("default_profile.jpg")));
+            profileImg = ImageIO.read(Objects.requireNonNull(this.getClass().getClassLoader().getResource("default_profile.jpg")));
         }
         return profileImg;
     }
