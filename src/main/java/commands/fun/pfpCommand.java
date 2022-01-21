@@ -15,7 +15,7 @@ public class pfpCommand extends ListenerAdapter {
 
     {
         try {
-            client = IGClient.builder().username("yourname").password("yourpass").simulatedLogin();
+            client = IGClient.builder().username("ooo").password("yourpass").simulatedLogin();
         } catch (IGLoginException e) {
             e.printStackTrace();
         }

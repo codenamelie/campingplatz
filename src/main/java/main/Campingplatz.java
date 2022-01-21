@@ -15,13 +15,11 @@ import net.dv8tion.jda.api.managers.Presence;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.ChunkingFilter;
 import net.dv8tion.jda.api.utils.MemberCachePolicy;
-
 import javax.security.auth.login.LoginException;
-import java.util.Map;
 
 public class Campingplatz {
 
-    private static final String token = "OTMyMDYxNTEwNTg5NjQwNzQ1.YeNf7A.UTcAzvkx811OLBWxyGR3Vr5QcbU";
+    private static final String token = "OTMyMDYxNTEwNTg5NjQwNzQ1.YeNf7A._BLB0QcZRGD31JHHHi8LwsxtKt0";
     private static SelfUser selfUser;
     private static JDA jda;
     private static Cache cache;
@@ -29,9 +27,6 @@ public class Campingplatz {
     public static void main(String[] args) throws LoginException {
         //new NewLoveImage(100, "https://cdn.discordapp.com/avatars/703751413305573438/c49e5b4298afdee58b0761e5758698df.png");
         bot();
-
-        
-
     }
 
     public static void setCache(Cache c) {
