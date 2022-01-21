@@ -30,7 +30,7 @@ public class AkiCommand extends ListenerAdapter {
 
     @Override
     public void onMessageReceived(MessageReceivedEvent event) {
-        if(event.getMessage().getContentDisplay().equalsIgnoreCase(".aki")) {
+        if(event.getMessage().getContentDisplay().equalsIgnoreCase(".aki ")) {
             if(!AkinatorGameHandler.hasUserAkiGame(event.getMember())) {
                 AkinatorGame game = new AkinatorGame(event.getMember(), event.getTextChannel());
                 AkinatorGameHandler.register(game);
