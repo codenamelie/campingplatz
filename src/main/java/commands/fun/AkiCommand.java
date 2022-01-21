@@ -21,6 +21,7 @@ public class AkiCommand extends ListenerAdapter {
 
     private static HashMap<String, Akiwrapper.Answer> answers = new HashMap<>();
 
+
     static {
         answers.put("p", Akiwrapper.Answer.PROBABLY);
         answers.put("y", Akiwrapper.Answer.YES);
